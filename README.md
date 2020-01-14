@@ -3,7 +3,8 @@ This is a simple app to manage products:
 ### Still To Do:
 
 1. make the render helpers to make `ProductForm` also able to edit when double clicking on `ProductItemRow`
-2. form validation
+2. set up `ProductItemRow` to connect with Redux
+3. form validation
   - name => less than 50 characters
   - price > 0
 3. make search work
