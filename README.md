@@ -1,5 +1,14 @@
 This is a simple app to manage products:
 
+### Done:
+
+1. ☑️ Home page shows list of products with required properties
+2. ☑️ Modal for adding products
+3. ☑️ Delete button by each products
+4. ☑️ All products are saved in local storage
+5. ☑️ Category is a dropdown menu
+6. ☑️ Redux action and reducers for editing already set up - now just working on implementation in component
+
 ### To Do:
 
 1. make the render helpers to make `ProductForm` also able to edit when double clicking on `ProductItemRow`
@@ -12,14 +21,6 @@ This is a simple app to manage products:
 6. **BONUS**: Routing (clarify)
 7. **BONUS**: Get list from NodeJS server
 
-### Done:
-
-1. ☑️ Home page shows list of products with required properties
-2. ☑️ Modal for adding products
-3. ☑️ Delete button by each products
-4. ☑️ All products are saved in local storage
-5. ☑️ Category is a dropdown menu
-6. ☑️ Redux action and reducers for editing already set up - now just working on implementation in component
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
