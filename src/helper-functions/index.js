@@ -1,3 +1,5 @@
+export const getElementsValue = id => document.getElementById(id).value;
+
 // some helpers to format input
 export const formatDateToString = dateStr => {
   const d = new Date(dateStr);

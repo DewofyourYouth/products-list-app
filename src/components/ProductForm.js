@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addProduct, toggleModal } from '../actions';
-import { saveProductsToLocal } from '../helper-functions';
+import { saveProductsToLocal, getElementsValue } from '../helper-functions';
 
 class ProductForm extends Component {
-  getValueHelper(id) {
-    return document.getElementById(id).value;
-  }
-
   clearAllFields = () => {
     return new Promise(resolve => {
       const allInputs = document.querySelectorAll('input');
@@ -20,15 +16,15 @@ class ProductForm extends Component {
 
   handleClick = () => {
     this.props.addProduct({
-      id: this.getValueHelper('product-id'),
-      name: this.getValueHelper('product-name'),
-      category: this.getValueHelper('product-category'),
-      price: parseInt(this.getValueHelper('product-price')),
+      name: getElementsValue('product-name'),
+      category: getElementsValue('product-category'),
+      price: parseInt(getElementsValue('product-price')),
       created_date: new Date().toDateString()
     });
   };
 
   render() {
+    console.log(this.props.myNum);
     return (
       <div>
         <div className="form-row mb-2">
