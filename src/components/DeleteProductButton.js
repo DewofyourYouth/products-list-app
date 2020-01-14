@@ -1,15 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import { saveProductsToLocal } from '../helper-functions';
 import { deleteProduct } from '../actions';
 
-const DeleteProductButton = ({ productId, deleteProduct }) => {
+const DeleteProductButton = ({ productName, products, deleteProduct }) => {
   return (
     <button
-      data-product-id={productId}
-      id={productId}
+      data-product-name={productName}
+      id={productName}
       className="btn btn-danger"
-      onClick={() => deleteProduct(productId)}
+      onClick={() => deleteProduct(productName)}
     >
       Delete
     </button>
@@ -17,6 +17,7 @@ const DeleteProductButton = ({ productId, deleteProduct }) => {
 };
 
 const mapStateToProps = state => {
+  saveProductsToLocal(state.products);
   return { products: state.products };
 };
 

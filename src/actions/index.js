@@ -1,12 +1,17 @@
 // Product actions
 export const addProduct = payload => ({
   type: 'ADD_PRODUCT',
-  payload: payload
+  payload
 });
 
-export const deleteProduct = id => ({
+export const deleteProduct = name => ({
   type: 'DELETE_PRODUCT',
-  id
+  name
+});
+
+export const updateProduct = payload => ({
+  type: 'EDIT_PRODUCT',
+  payload
 });
 
 // Modal actions

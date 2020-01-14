@@ -2,13 +2,13 @@ import React from 'react';
 import Modal from './Modal';
 import { connect } from 'react-redux';
 import { toggleModal } from '../actions';
-import AddProduct from './AddProduct';
+import ProductForm from './ProductForm';
 
 const ActionBar = ({ modal, toggleModal }) => {
   return (
     <div className="btn-toolbar mt-3 mb-3" role="toolbar">
       <Modal header="Add Product">
-        <AddProduct />
+        <ProductForm action="add" />
       </Modal>
       <button className="btn btn-primary mr-2" onClick={toggleModal}>
         Add Product
