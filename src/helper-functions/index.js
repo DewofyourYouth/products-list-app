@@ -1,3 +1,4 @@
+// some helpers to format input
 export const formatDateToString = dateStr => {
   const d = new Date(dateStr);
   const months = [
@@ -23,6 +24,10 @@ export const formatDateToString = dateStr => {
 };
 
 export const formatCurrency = price => `$${price.toFixed(2)}`;
+
+// some helpers for validation
+
+//some helpers for sorting and searching
 
 // should be put before the return in mapStateToProps
 export const saveProductsToLocal = arr => {
