@@ -5,12 +5,12 @@ This is a simple app to manage products:
 1. make the render helpers to make `ProductForm` also able to edit when double clicking on `ProductItemRow`
 2. set up `ProductItemRow` to connect with redux store
 3. form validation
-  - name => less than 50 characters
-  - price > 0
-3. search work and sorting
-4. **BONUS**: Paging (should be pagination?)
-5. **BONUS**: Routing (clarify)
-6. **BONUS**: Get list from NodeJS server
+    - name => less than 50 characters
+    - price > 0
+4. search work and sorting
+5. **BONUS**: Paging (should be pagination?)
+6. **BONUS**: Routing (clarify)
+7. **BONUS**: Get list from NodeJS server
 
 ### Done:
 
