@@ -1,3 +1,14 @@
+This is a simple app to manage products:
+
+### **Requirement 1:** Home page should present a list of products with the following properties:
+
+1. Home
+2. Category
+3. Price
+4. Created Date
+   
+### **Requirement 2:** Create an add button which will open a modal for a new product.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
