@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductsTable from './ProductsTable';
-import { ActionBar } from './ActionBar';
+import ActionBar from './ActionBar';
 
 export const App = () => {
   return (
