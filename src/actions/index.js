@@ -1,7 +1,7 @@
-// Product Reducers
-export const addProduct = ({ id, name, category, price, created_date }) => ({
+// Product actions
+export const addProduct = payload => ({
   type: 'ADD_PRODUCT',
-  payload: { id, name, category, price, created_date }
+  payload: payload
 });
 
 export const deleteProduct = id => ({
@@ -9,7 +9,7 @@ export const deleteProduct = id => ({
   id
 });
 
-// Modal Reducers
+// Modal actions
 export const toggleModal = () => ({
   type: 'TOGGLE_MODAL'
 });

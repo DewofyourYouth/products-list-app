@@ -23,9 +23,15 @@
   height: fit-content;
   padding: 50px;
 }
-
-.modal-header {
+.mod-header {
+  justify-content: space-between;
+  display: flex;
   margin: auto;
-  text-align: center;
+  margin-bottom: 20px;
   border: none;
+}
+
+.modal-main {
+  border: none;
+  padding-bottom: 20px;
 }
