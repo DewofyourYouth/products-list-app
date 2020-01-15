@@ -7,12 +7,11 @@ This is a simple app to manage products. Uses React and Redux. Integrated with [
 3. ☑️ Delete button by each products
 4. ☑️ All products are saved in local storage
 5. ☑️ Category is a dropdown menu
-6. ☑️ Redux action and reducers for editing already set up - now just working on implementation in component
-7. ☑️ make the render helpers to make `ProductForm` also able to edit when double clicking on `ProductItemRow`
-8. ☑️ form validation
+6. ☑️ Edit price on double click
+7. ☑️ form validation
    - name => less than 50 characters
    - price > 0
-9. ☑️ search work and sorting
+8. ☑️ search work and sorting
 
 ### To Do:
 
