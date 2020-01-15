@@ -5,7 +5,7 @@ This is a simple app to manage products. Uses React and Redux. Integrated with [
 1. ☑️ Home page shows list of products with required properties
 2. ☑️ Modal for adding products
 3. ☑️ Delete button by each products
-4. ☑️ All products are saved in local storage
+4. ☑️ All products are saved in localStorage
 5. ☑️ Category is a dropdown menu
 6. ☑️ Edit price on double click
 7. ☑️ form validation
