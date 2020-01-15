@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Swal from 'sweetalert2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faSort } from '@fortawesome/free-solid-svg-icons';
+import { faSort } from '@fortawesome/free-solid-svg-icons';
 import ActionBar from './ActionBar';
 import { getIndexByName } from '../helper-functions';
 import { selectProduct, updateProduct } from '../actions';
@@ -12,13 +12,32 @@ import { ProductItemRow } from './ProductItemRow';
 class ProductsTable extends Component {
   constructor(props) {
     super(props);
-    this.state = { productsList: [...this.props.products] };
+    this.state = { productsList: [...this.props.products], term: '' };
   }
 
+  rowsConfig = () => {
+    if (this.state.term === '') {
+      return this.props.products;
+    } else {
+      return this.props.products.filter(
+        x => x.name.indexOf(this.state.term) !== -1
+      );
+    }
+  };
+
+  getSearchTerm = term => {
+    console.log(term);
+    if (term !== '') {
+      let searchResults = this.props.products.filter(
+        x => x.name.indexOf(term) !== -1
+      );
+      console.table(searchResults);
+      this.forceUpdate(this.setState({ term: term }));
+      console.log(this.state.term);
+    }
+  };
   getSelectedProduct = product => {
     selectProduct(product);
-    // console.log(product);
-    // console.log(this.props.products);
     console.log(getIndexByName(this.props.products, product));
     const prodIdx = getIndexByName(this.props.products, product);
     Swal.fire({
@@ -42,9 +61,10 @@ class ProductsTable extends Component {
     });
   };
   render() {
+    console.log(this.state.term);
     return (
       <div className="col-md-12">
-        <ActionBar />
+        <ActionBar getTerm={this.getSearchTerm} />
         <table className="table table-striped">
           <thead>
             <tr>
@@ -141,7 +161,7 @@ class ProductsTable extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.products.map(product => (
+            {this.rowsConfig().map(product => (
               <ProductItemRow
                 key={product.name}
                 item={product}
