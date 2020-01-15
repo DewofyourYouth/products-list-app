@@ -12,7 +12,7 @@ This is a simple app to manage products. Uses React and Redux. Integrated with [
    - name => less than 50 characters
    - price > 0
 8. ☑️ searchable by product name
-9. ☑️ column sortable and reversable
+9. ☑️ columns sortable and reversable
 
 ### To Do:
 
