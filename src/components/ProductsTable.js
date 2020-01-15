@@ -26,15 +26,7 @@ class ProductsTable extends Component {
   };
 
   getSearchTerm = term => {
-    console.log(term);
-    if (term !== '') {
-      let searchResults = this.props.products.filter(
-        x => x.name.indexOf(term) !== -1
-      );
-      console.table(searchResults);
-      this.forceUpdate(this.setState({ term: term }));
-      console.log(this.state.term);
-    }
+    this.forceUpdate(this.setState({ term: term }));
   };
   getSelectedProduct = product => {
     selectProduct(product);
