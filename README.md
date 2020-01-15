@@ -11,7 +11,8 @@ This is a simple app to manage products. Uses React and Redux. Integrated with [
 7. ☑️ form validation
    - name => less than 50 characters
    - price > 0
-8. ☑️ search work and sorting
+8. ☑️ searchable by product name
+9. ☑️ column sortable and reversable
 
 ### To Do:
 
