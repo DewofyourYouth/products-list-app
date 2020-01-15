@@ -8,9 +8,18 @@ const productsListReducer = (state = [], action) => {
       return state.filter(product => product.name !== action.name);
     case 'EDIT_PRODUCT':
       const newProduct = state.map(x =>
-        x.payload.name === action.payload.name ? action.payload : x
+        x.name === action.name ? action.payload : x
       );
       return newProduct;
+    default:
+      return state;
+  }
+};
+
+const selectedProductReducer = (state = '', action) => {
+  switch (action.type) {
+    case 'SELECT_PRODUCT':
+      return action.name;
     default:
       return state;
   }
@@ -27,5 +36,6 @@ const modalDisplayReducer = (state = false, action) => {
 
 export default combineReducers({
   products: productsListReducer,
+  selected: selectedProductReducer,
   modal: modalDisplayReducer
 });

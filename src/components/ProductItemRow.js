@@ -1,19 +1,13 @@
 import React from 'react';
 import DeleteProductButton from './DeleteProductButton';
-import Swal from 'sweetalert2';
 import { formatDateToString, formatCurrency } from '../helper-functions';
 
-export const ProductItemRow = ({ item }) => {
+export const ProductItemRow = ({ item, product }) => {
   return (
     <tr
-      onDoubleClick={() =>
-        Swal.fire({
-          title: 'Edit Item',
-          html: `Name: ${item.name}<br />
-          Category: ${item.category}<br />
-          Price: ${formatCurrency(item.price)}`
-        })
-      }
+      onDoubleClick={() => {
+        product(item.name);
+      }}
     >
       <td>{item.name}</td>
       <td>{item.category}</td>

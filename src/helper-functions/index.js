@@ -1,4 +1,10 @@
+export const isValidName = (name = '') =>
+  name.length > 0 && name.length < 50 ? true : false;
+export const isValidPrice = price => (price > 0 ? true : false);
+
 export const getElementsValue = id => document.getElementById(id).value;
+export const getIndexByName = (arr, name) =>
+  arr.findIndex(arr => arr.name === name);
 
 // some helpers to format input
 export const formatDateToString = dateStr => {
