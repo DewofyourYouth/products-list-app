@@ -3,6 +3,7 @@ import Modal from './Modal';
 import { connect } from 'react-redux';
 import { toggleModal } from '../actions';
 import ProductForm from './ProductForm';
+import { faCommentsDollar } from '@fortawesome/free-solid-svg-icons';
 
 const ActionBar = ({ modal, toggleModal }) => {
   return (

@@ -35,7 +35,6 @@ class ProductForm extends Component {
   };
 
   validateName = name => {
-    console.table(name);
     if (isValidName(name)) {
       return '';
     }
