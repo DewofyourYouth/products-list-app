@@ -8,7 +8,6 @@ import { getIndexByName } from '../helper-functions';
 import { selectProduct, updateProduct } from '../actions';
 import { ProductItemRow } from './ProductItemRow';
 
-//products, selectProduct, updateProduct
 class ProductsTable extends Component {
   constructor(props) {
     super(props);
