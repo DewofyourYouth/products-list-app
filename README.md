@@ -8,19 +8,17 @@ This is a simple app to manage products. Uses React and Redux. Integrated with [
 4. ☑️ All products are saved in local storage
 5. ☑️ Category is a dropdown menu
 6. ☑️ Redux action and reducers for editing already set up - now just working on implementation in component
+7. make the render helpers to make `ProductForm` also able to edit when double clicking on `ProductItemRow`
+8. form validation
+   - name => less than 50 characters
+   - price > 0
+9. search work and sorting
 
 ### To Do:
 
-1. make the render helpers to make `ProductForm` also able to edit when double clicking on `ProductItemRow`
-2. set up `ProductItemRow` to connect with redux store
-3. form validation
-    - name => less than 50 characters
-    - price > 0
-4. search work and sorting
-5. **BONUS**: Paging (should be pagination?)
-6. **BONUS**: Routing (clarify)
-7. **BONUS**: Get list from NodeJS server
-
+2. **BONUS**: Paging (should be pagination?)
+3. **BONUS**: Routing (clarify)
+4. **BONUS**: Get list from NodeJS server
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
