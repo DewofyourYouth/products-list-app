@@ -18,7 +18,7 @@ class ProductForm extends Component {
     this.props.addProduct({
       name: getElementsValue('product-name'),
       category: getElementsValue('product-category'),
-      price: parseInt(getElementsValue('product-price')),
+      price: parseFloat(getElementsValue('product-price')),
       created_date: new Date().toDateString()
     });
   };
