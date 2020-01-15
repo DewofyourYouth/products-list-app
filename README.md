@@ -1,4 +1,4 @@
-This is a simple app to manage products:
+This is a simple app to manage products. Uses React and Redux. Integrated with [Redux DevTools Chrome Extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en).
 
 ### Done:
 
