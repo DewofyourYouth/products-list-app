@@ -30,7 +30,6 @@ class ProductsTable extends Component {
   };
   getSelectedProduct = product => {
     selectProduct(product);
-    console.log(getIndexByName(this.props.products, product));
     const prodIdx = getIndexByName(this.props.products, product);
     Swal.fire({
       title: `Edit Price: ${product}`,
@@ -53,7 +52,6 @@ class ProductsTable extends Component {
     });
   };
   render() {
-    console.log(this.state.term);
     return (
       <div className="col-md-12">
         <ActionBar getTerm={this.getSearchTerm} />

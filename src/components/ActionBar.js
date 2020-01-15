@@ -3,7 +3,6 @@ import Modal from './Modal';
 import { connect } from 'react-redux';
 import { toggleModal } from '../actions';
 import ProductForm from './ProductForm';
-import { faCommentsDollar } from '@fortawesome/free-solid-svg-icons';
 
 const ActionBar = ({ modal, toggleModal, getTerm }) => {
   return (
@@ -26,12 +25,7 @@ const ActionBar = ({ modal, toggleModal, getTerm }) => {
               Search
             </div>
           </div>
-          <input
-            id="search-term"
-            // onChange={e => console.log(e.target.value)}
-            type="text"
-            className="form-control"
-          />
+          <input id="search-term" type="text" className="form-control" />
         </div>
       </form>
     </div>

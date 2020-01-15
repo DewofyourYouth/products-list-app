@@ -4,7 +4,6 @@ import { addProduct, updateProduct, toggleModal } from '../actions';
 import {
   saveProductsToLocal,
   getElementsValue,
-  getIndexByName,
   isValidName,
   isValidPrice
 } from '../helper-functions';
@@ -118,7 +117,6 @@ class ProductForm extends Component {
               className="form-control"
               onChange={e => {
                 this.setState({ price: e.target.value });
-                console.log(this.state.price);
               }}
               value={this.state.price}
             />
