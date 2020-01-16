@@ -1,6 +1,6 @@
 This is a simple app to manage products. Uses React and Redux. Integrated with [Redux DevTools Chrome Extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en).
 
-Demo the site on [here](https://elegant-golick-34c2e6.netlify.com/)
+A deployed demo of the site available [here](https://elegant-golick-34c2e6.netlify.com/)
 
 For a YouTube demo of the app [click here](https://youtu.be/bbE4zrLrNXA)
 
