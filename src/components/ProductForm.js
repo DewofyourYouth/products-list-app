@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addProduct, updateProduct, toggleModal } from '../actions';
+import { addProduct, toggleModal } from '../actions';
 import {
   saveProductsToLocal,
   getElementsValue,
@@ -15,21 +15,13 @@ class ProductForm extends Component {
   }
 
   handleClick = () => {
-    if (this.props.action === 'add') {
-      this.props.addProduct({
-        name: getElementsValue('product-name'),
-        category: getElementsValue('product-category'),
-        price: parseFloat(getElementsValue('product-price')),
-        created_date: new Date().toDateString()
-      });
-    } else {
-      this.props.updateProduct({
-        name: getElementsValue('product-name'),
-        category: getElementsValue('product-category'),
-        price: parseFloat(getElementsValue('product-price')),
-        created_date: new Date().toDateString()
-      });
-    }
+    this.props.addProduct({
+      name: getElementsValue('product-name'),
+      category: getElementsValue('product-category'),
+      price: parseFloat(getElementsValue('product-price')),
+      created_date: new Date().toDateString()
+    });
+
     this.setState({ price: 0, name: '' });
   };
 
@@ -140,6 +132,5 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {
   addProduct,
-  updateProduct,
   toggleModal
 })(ProductForm);
