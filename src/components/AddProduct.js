@@ -95,12 +95,12 @@ class AddProduct extends Component {
           <label className="col-md-2 col-form-label">Category*</label>
           <div className="col">
             <select id="product-category" className="form-control">
-              <option>Clothing</option>
+              <option>clothing</option>
               <option>Housewares</option>
-              <option>Electronics</option>
-              <option>Food Product</option>
-              <option>Sporting Goods</option>
-              <option>Toys</option>
+              <option>electronics</option>
+              <option>food products</option>
+              <option>sporting goods</option>
+              <option>toys</option>
             </select>
           </div>
           <label className="col-md-2 col-form-label">Price*</label>
