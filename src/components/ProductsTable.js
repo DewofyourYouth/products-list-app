@@ -14,7 +14,58 @@ class ProductsTable extends Component {
     this.state = { productsList: [...this.props.products], term: '' };
   }
 
-  rowsConfig = () => {
+  sortConfig = msg => {
+    switch (msg) {
+      case 'product-name':
+        this.setState({
+          productsList: this.state.productsList.sort((a, b) => {
+            let nameA = a.name.toLowerCase();
+            let nameB = b.name.toLowerCase();
+            if (nameA < nameB) {
+              return -1;
+            }
+            if (nameA > nameB) {
+              return 1;
+            }
+            return 0;
+          })
+        });
+        break;
+      case 'category':
+        this.setState({
+          productsList: this.props.products.sort((a, b) => {
+            let categoryA = a.category.toLowerCase();
+            let categoryB = b.category.toLowerCase();
+            if (categoryA < categoryB) {
+              return -1;
+            }
+            if (categoryA > categoryB) {
+              return 1;
+            }
+            return 0;
+          })
+        });
+        break;
+      case 'price':
+        this.setState({
+          productsList: this.props.products.sort((a, b) => a.price - b.price)
+        });
+        break;
+      case 'date':
+        this.setState({
+          productsList: this.props.products.sort(
+            (a, b) =>
+              new Date(a.created_date).getTime() -
+              new Date(b.created_date).getTime()
+          )
+        });
+        break;
+      default:
+        return;
+    }
+  };
+
+  rowsSearchConfig = () => {
     if (this.state.term === '') {
       return this.props.products;
     } else {
@@ -61,21 +112,7 @@ class ProductsTable extends Component {
                 Name {'  '}
                 <button
                   className="btn btn-outline-info"
-                  onClick={() =>
-                    this.setState({
-                      productsList: this.state.productsList.sort((a, b) => {
-                        let nameA = a.name.toLowerCase();
-                        let nameB = b.name.toLowerCase();
-                        if (nameA < nameB) {
-                          return -1;
-                        }
-                        if (nameA > nameB) {
-                          return 1;
-                        }
-                        return 0;
-                      })
-                    })
-                  }
+                  onClick={() => this.sortConfig('product-name')}
                 >
                   <FontAwesomeIcon icon={faSort} />
                 </button>
@@ -84,21 +121,7 @@ class ProductsTable extends Component {
                 Category {'  '}
                 <button
                   className="btn btn-outline-info"
-                  onClick={() =>
-                    this.setState({
-                      productsList: this.props.products.sort((a, b) => {
-                        let categoryA = a.category.toLowerCase();
-                        let categoryB = b.category.toLowerCase();
-                        if (categoryA < categoryB) {
-                          return -1;
-                        }
-                        if (categoryA > categoryB) {
-                          return 1;
-                        }
-                        return 0;
-                      })
-                    })
-                  }
+                  onClick={() => this.sortConfig('category')}
                 >
                   <FontAwesomeIcon icon={faSort} />
                 </button>
@@ -107,13 +130,7 @@ class ProductsTable extends Component {
                 Price {'  '}
                 <button
                   className="btn btn-outline-info"
-                  onClick={() => {
-                    this.setState({
-                      productsList: this.props.products.sort(
-                        (a, b) => a.price - b.price
-                      )
-                    });
-                  }}
+                  onClick={() => this.sortConfig('price')}
                 >
                   <FontAwesomeIcon icon={faSort} />
                 </button>
@@ -122,15 +139,7 @@ class ProductsTable extends Component {
                 Created Date {'  '}
                 <button
                   className="btn btn-outline-info"
-                  onClick={() => {
-                    this.setState({
-                      productsList: this.props.products.sort(
-                        (a, b) =>
-                          new Date(a.created_date).getTime() -
-                          new Date(b.created_date).getTime()
-                      )
-                    });
-                  }}
+                  onClick={() => this.sortConfig('date')}
                 >
                   <FontAwesomeIcon icon={faSort} />
                 </button>
@@ -150,7 +159,7 @@ class ProductsTable extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.rowsConfig().map(product => (
+            {this.rowsSearchConfig().map(product => (
               <ProductItemRow
                 key={product.name}
                 item={product}
