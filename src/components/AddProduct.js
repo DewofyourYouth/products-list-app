@@ -96,7 +96,7 @@ class AddProduct extends Component {
           <div className="col">
             <select id="product-category" className="form-control">
               <option>clothing</option>
-              <option>Housewares</option>
+              <option>housewares</option>
               <option>electronics</option>
               <option>food products</option>
               <option>sporting goods</option>
