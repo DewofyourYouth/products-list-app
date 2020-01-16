@@ -67,7 +67,7 @@ class AddProduct extends Component {
       );
     }
     return (
-      <button className="btn btn-primary" disabled>
+      <button className="btn btn-secondary" disabled>
         Submit
       </button>
     );
