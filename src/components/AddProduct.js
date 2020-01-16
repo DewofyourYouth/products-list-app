@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
+
 import { addProduct, toggleModal } from '../actions';
 import {
   saveProductsToLocal,
