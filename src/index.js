@@ -12,27 +12,39 @@ const productsList = localStorage.product
   : {
       products: [
         {
-          name: 'pants',
-          category: 'clothing',
-          price: 29.99,
+          name: 'iPhone XS',
+          category: 'electronics',
+          price: 999,
           created_date: '10/5/2019'
         },
         {
-          name: 'teddy bear',
+          name: 'Kangaroo Cuddly Giant Plush Teddy Bear',
           category: 'toys',
-          price: 14.5,
+          price: 59.95,
           created_date: '8/4/2019'
         },
         {
-          name: 'blazer',
-          category: 'clothing',
-          price: 50.99,
+          name: 'Slim Jim Smoked Snack Stick Pantry Pack (46 count)',
+          category: 'food products',
+          price: 8.62,
+          created_date: '1/3/2020'
+        },
+        {
+          name: 'MacBook Air',
+          category: 'electronics',
+          price: 1199,
           created_date: '3/5/2019'
         },
         {
-          name: 'golf club',
+          name: "Ben & Jerry's Half Baked Ice Cream (16oz)",
+          category: 'food product',
+          price: 4.57,
+          created_date: '12/31/19'
+        },
+        {
+          name: 'Callaway Edge 10-piece Golf Club Set',
           category: 'sporting goods',
-          price: 32,
+          price: 644.82,
           created_date: '2/10/19'
         }
       ]
