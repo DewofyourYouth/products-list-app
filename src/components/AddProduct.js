@@ -8,7 +8,7 @@ import {
   isValidPrice
 } from '../helper-functions';
 
-class ProductForm extends Component {
+class AddProduct extends Component {
   constructor(props) {
     super(props);
     this.state = { price: 0, name: '' };
@@ -133,4 +133,4 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, {
   addProduct,
   toggleModal
-})(ProductForm);
+})(AddProduct);
