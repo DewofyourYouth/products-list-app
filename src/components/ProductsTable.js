@@ -18,7 +18,7 @@ class ProductsTable extends Component {
     switch (row) {
       case 'product-name':
         this.setState({
-          productsList: this.state.productsList.sort((a, b) => {
+          productsList: this.props.products.sort((a, b) => {
             let nameA = a.name.toLowerCase();
             let nameB = b.name.toLowerCase();
             if (nameA < nameB) {
@@ -30,6 +30,7 @@ class ProductsTable extends Component {
             return 0;
           })
         });
+        console.log('sort');
         break;
       case 'category':
         this.setState({
