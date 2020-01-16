@@ -27,7 +27,7 @@ class AddProduct extends Component {
 
   validateName = name => {
     if (isValidName(name)) {
-      return '';
+      return;
     }
     return (
       <small id="emailHelp" className="form-text text-danger">
