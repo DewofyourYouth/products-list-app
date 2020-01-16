@@ -1,5 +1,7 @@
 This is a simple app to manage products. Uses React and Redux. Integrated with [Redux DevTools Chrome Extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en).
 
+For a YouTube demo of the app [click here](https://youtu.be/bbE4zrLrNXA)
+
 ### Done:
 
 1. ☑️ Home page shows list of products with required properties
