@@ -14,8 +14,8 @@ class ProductsTable extends Component {
     this.state = { productsList: [...this.props.products], term: '' };
   }
 
-  sortConfig = msg => {
-    switch (msg) {
+  sortConfig = row => {
+    switch (row) {
       case 'product-name':
         this.setState({
           productsList: this.state.productsList.sort((a, b) => {
