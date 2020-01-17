@@ -71,7 +71,7 @@ class ProductsTable extends Component {
       return this.props.products;
     } else {
       return this.props.products.filter(
-        x => x.name.indexOf(this.state.term) !== -1
+        x => x.name.toLowerCase().indexOf(this.state.term.toLowerCase()) !== -1
       );
     }
   };

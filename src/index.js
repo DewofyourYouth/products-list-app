@@ -36,7 +36,7 @@ const productsList = localStorage.product
           created_date: '3/5/2019'
         },
         {
-          name: "Ben & Jerry's Half Baked Ice Cream (16oz)",
+          name: "Ben & Jerry's Half Baked Ice Cream (16 oz)",
           category: 'food product',
           price: 4.57,
           created_date: '12/31/19'
