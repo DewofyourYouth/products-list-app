@@ -66,6 +66,23 @@ class ProductsTable extends Component {
     }
   };
 
+  showSearchTerm = () => {
+    if (this.state.term === '') {
+      return;
+    }
+    return (
+      <p>
+        You've searched: "{this.state.term}" {'  '}
+        <button
+          className="btn btn-sm btn-info"
+          onClick={() => this.setState({ term: '' })}
+        >
+          clear search
+        </button>
+      </p>
+    );
+  };
+
   rowsSearchConfig = () => {
     if (this.state.term === '') {
       return this.props.products;
@@ -106,9 +123,7 @@ class ProductsTable extends Component {
     return (
       <div className="col-md-12">
         <ActionBar getTerm={this.getSearchTerm} />
-        {this.state.term !== ''
-          ? 'you\'ve searched: "' + this.state.term + '"'
-          : ''}
+        {this.showSearchTerm()}
         <table className="table table-striped">
           <thead>
             <tr>
