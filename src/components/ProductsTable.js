@@ -109,7 +109,10 @@ class ProductsTable extends Component {
         }
       }
     }).then(result => {
-      if (result.value) {
+      if (
+        result.value &&
+        this.props.products[prodIdx].price !== parseFloat(result.value)
+      ) {
         this.props.updateProduct({
           name: this.props.products[prodIdx].name,
           category: this.props.products[prodIdx].category,
