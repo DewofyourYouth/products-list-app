@@ -106,6 +106,9 @@ class ProductsTable extends Component {
     return (
       <div className="col-md-12">
         <ActionBar getTerm={this.getSearchTerm} />
+        {this.state.term !== ''
+          ? 'you\'ve searched: "' + this.state.term + '"'
+          : ''}
         <table className="table table-striped">
           <thead>
             <tr>
