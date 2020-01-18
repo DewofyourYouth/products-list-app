@@ -16,7 +16,7 @@ class ProductsTable extends Component {
       term: '',
       columnsConfig: [
         {
-          name: 'name',
+          name: 'Name',
           sortConfig: () => {
             this.setState({
               productsList: this.props.products.sort((a, b) => {
@@ -34,7 +34,7 @@ class ProductsTable extends Component {
           }
         },
         {
-          name: 'category',
+          name: 'Category',
           sortConfig: () => {
             this.setState({
               productsList: this.props.products.sort((a, b) => {
@@ -52,7 +52,7 @@ class ProductsTable extends Component {
           }
         },
         {
-          name: 'price',
+          name: 'Price',
           sortConfig: () => {
             this.setState({
               productsList: this.props.products.sort(
@@ -62,7 +62,7 @@ class ProductsTable extends Component {
           }
         },
         {
-          name: 'created_date',
+          name: 'Created Date',
           sortConfig: () => {
             this.setState({
               productsList: this.props.products.sort(
@@ -185,6 +185,7 @@ class ProductsTable extends Component {
       }
     });
   };
+
   render() {
     return (
       <div className="col-md-12">
