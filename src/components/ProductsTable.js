@@ -14,7 +14,7 @@ class ProductsTable extends Component {
     this.state = {
       productsList: [...this.props.products],
       term: '',
-      columnsConfig: [
+      columnHeaders: [
         {
           name: 'Name',
           sortConfig: () => {
@@ -194,7 +194,7 @@ class ProductsTable extends Component {
         <table className="table table-striped">
           <thead>
             <tr>
-              {this.state.columnsConfig.map(col => (
+              {this.state.columnHeaders.map(col => (
                 <th>
                   {col.name}{' '}
                   <button
