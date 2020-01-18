@@ -11,7 +11,70 @@ import { ProductItemRow } from './ProductItemRow';
 class ProductsTable extends Component {
   constructor(props) {
     super(props);
-    this.state = { productsList: [...this.props.products], term: '' };
+    this.state = {
+      productsList: [...this.props.products],
+      term: '',
+      columnsConfig: [
+        {
+          name: 'name',
+          sortConfig: () => {
+            this.setState({
+              productsList: this.props.products.sort((a, b) => {
+                let nameA = a.name.toLowerCase();
+                let nameB = b.name.toLowerCase();
+                if (nameA < nameB) {
+                  return -1;
+                }
+                if (nameA > nameB) {
+                  return 1;
+                }
+                return 0;
+              })
+            });
+          }
+        },
+        {
+          name: 'category',
+          sortConfig: () => {
+            this.setState({
+              productsList: this.props.products.sort((a, b) => {
+                let catA = a.category.toLowerCase();
+                let catB = b.category.toLowerCase();
+                if (catA < catB) {
+                  return -1;
+                }
+                if (catA > catB) {
+                  return 1;
+                }
+                return 0;
+              })
+            });
+          }
+        },
+        {
+          name: 'price',
+          sortConfig: () => {
+            this.setState({
+              productsList: this.props.products.sort(
+                (a, b) => a.price - b.price
+              )
+            });
+          }
+        },
+        {
+          name: 'created_date',
+          sortConfig: () => {
+            this.setState({
+              productsList: this.props.products.sort(
+                (a, b) =>
+                  new Date(a.created_date).getTime() -
+                  new Date(b.created_date).getTime()
+              )
+            });
+          }
+        }
+      ]
+    };
   }
 
   sortConfig = row => {
@@ -130,42 +193,17 @@ class ProductsTable extends Component {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>
-                Name {'  '}
-                <button
-                  className="btn btn-outline-info"
-                  onClick={() => this.sortConfig('product-name')}
-                >
-                  <FontAwesomeIcon icon={faSort} />
-                </button>
-              </th>
-              <th>
-                Category {'  '}
-                <button
-                  className="btn btn-outline-info"
-                  onClick={() => this.sortConfig('category')}
-                >
-                  <FontAwesomeIcon icon={faSort} />
-                </button>
-              </th>
-              <th>
-                Price {'  '}
-                <button
-                  className="btn btn-outline-info"
-                  onClick={() => this.sortConfig('price')}
-                >
-                  <FontAwesomeIcon icon={faSort} />
-                </button>
-              </th>
-              <th>
-                Created Date {'  '}
-                <button
-                  className="btn btn-outline-info"
-                  onClick={() => this.sortConfig('date')}
-                >
-                  <FontAwesomeIcon icon={faSort} />
-                </button>
-              </th>
+              {this.state.columnsConfig.map(col => (
+                <th>
+                  {col.name}{' '}
+                  <button
+                    className="btn btn-outline-info"
+                    onClick={() => col.sortConfig()}
+                  >
+                    <FontAwesomeIcon icon={faSort} />
+                  </button>
+                </th>
+              ))}
               <th>
                 <button
                   className="btn btn-outline-info"
