@@ -26,6 +26,11 @@ const ActionBar = ({ modal, toggleModal, getTerm }) => {
             </div>
           </div>
           <input id="search-term" type="text" className="form-control" />
+          <div className="input-group-append">
+            <button type="submit" className="btn btn-info">
+              Submit
+            </button>
+          </div>
         </div>
       </form>
     </div>
