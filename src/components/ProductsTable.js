@@ -77,58 +77,6 @@ class ProductsTable extends Component {
     };
   }
 
-  sortConfig = row => {
-    switch (row) {
-      case 'product-name':
-        this.setState({
-          productsList: this.props.products.sort((a, b) => {
-            let nameA = a.name.toLowerCase();
-            let nameB = b.name.toLowerCase();
-            if (nameA < nameB) {
-              return -1;
-            }
-            if (nameA > nameB) {
-              return 1;
-            }
-            return 0;
-          })
-        });
-        console.log('sort');
-        break;
-      case 'category':
-        this.setState({
-          productsList: this.props.products.sort((a, b) => {
-            let categoryA = a.category.toLowerCase();
-            let categoryB = b.category.toLowerCase();
-            if (categoryA < categoryB) {
-              return -1;
-            }
-            if (categoryA > categoryB) {
-              return 1;
-            }
-            return 0;
-          })
-        });
-        break;
-      case 'price':
-        this.setState({
-          productsList: this.props.products.sort((a, b) => a.price - b.price)
-        });
-        break;
-      case 'date':
-        this.setState({
-          productsList: this.props.products.sort(
-            (a, b) =>
-              new Date(a.created_date).getTime() -
-              new Date(b.created_date).getTime()
-          )
-        });
-        break;
-      default:
-        return;
-    }
-  };
-
   showSearchTerm = () => {
     if (this.state.term === '') {
       return;
@@ -156,9 +104,6 @@ class ProductsTable extends Component {
     }
   };
 
-  getSearchTerm = term => {
-    this.forceUpdate(this.setState({ term: term }));
-  };
   getSelectedProduct = product => {
     selectProduct(product);
     const prodIdx = getIndexByName(this.props.products, product);
@@ -189,7 +134,9 @@ class ProductsTable extends Component {
   render() {
     return (
       <div className="col-md-12">
-        <ActionBar getTerm={this.getSearchTerm} />
+        <ActionBar
+          getTerm={term => this.forceUpdate(this.setState({ term: term }))}
+        />
         {this.showSearchTerm()}
         <table className="table table-striped">
           <thead>
