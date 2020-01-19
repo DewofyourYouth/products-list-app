@@ -17,7 +17,7 @@ class ProductsTable extends Component {
       columnHeaders: [
         {
           name: 'Name',
-          sortConfig: () => {
+          sortRows: () => {
             this.setState({
               productsList: this.props.products.sort((a, b) => {
                 let nameA = a.name.toLowerCase();
@@ -35,7 +35,7 @@ class ProductsTable extends Component {
         },
         {
           name: 'Category',
-          sortConfig: () => {
+          sortRows: () => {
             this.setState({
               productsList: this.props.products.sort((a, b) => {
                 let catA = a.category.toLowerCase();
@@ -53,7 +53,7 @@ class ProductsTable extends Component {
         },
         {
           name: 'Price',
-          sortConfig: () => {
+          sortRows: () => {
             this.setState({
               productsList: this.props.products.sort(
                 (a, b) => a.price - b.price
@@ -63,7 +63,7 @@ class ProductsTable extends Component {
         },
         {
           name: 'Created Date',
-          sortConfig: () => {
+          sortRows: () => {
             this.setState({
               productsList: this.props.products.sort(
                 (a, b) =>
@@ -146,7 +146,7 @@ class ProductsTable extends Component {
                   {col.name}{' '}
                   <button
                     className="btn btn-outline-info"
-                    onClick={() => col.sortConfig()}
+                    onClick={() => col.sortRows()}
                   >
                     <FontAwesomeIcon icon={faSort} />
                   </button>
