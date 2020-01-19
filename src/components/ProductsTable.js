@@ -141,8 +141,8 @@ class ProductsTable extends Component {
         <table className="table table-striped">
           <thead>
             <tr>
-              {this.state.columnHeaders.map(col => (
-                <th>
+              {this.state.columnHeaders.map((col, i) => (
+                <th key={i}>
                   {col.name}{' '}
                   <button
                     className="btn btn-outline-info"

@@ -20,7 +20,7 @@ class AddProduct extends Component {
     if (
       this.props.products.filter(
         p => p.name === getElementsValue('product-name')
-      ) === []
+      ).length === 0
     ) {
       this.props.addProduct({
         name: getElementsValue('product-name'),
@@ -28,8 +28,15 @@ class AddProduct extends Component {
         price: parseFloat(getElementsValue('product-price')),
         created_date: new Date().toDateString()
       });
+      Swal.fire({
+        icon: 'success',
+        text: `${getElementsValue('product-name')} added!`
+      });
     } else {
-      Swal.fire('That product already exists!');
+      Swal.fire({
+        icon: 'error',
+        title: 'That product already exists!'
+      });
     }
 
     this.setState({ price: 0, name: '' });
