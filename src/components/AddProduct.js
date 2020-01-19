@@ -8,6 +8,7 @@ import {
   isValidName,
   isValidPrice
 } from '../helper-functions';
+import Swal from 'sweetalert2';
 
 class AddProduct extends Component {
   constructor(props) {
@@ -16,12 +17,20 @@ class AddProduct extends Component {
   }
 
   handleClick = () => {
-    this.props.addProduct({
-      name: getElementsValue('product-name'),
-      category: getElementsValue('product-category'),
-      price: parseFloat(getElementsValue('product-price')),
-      created_date: new Date().toDateString()
-    });
+    if (
+      this.props.products.filter(
+        p => p.name === getElementsValue('product-name')
+      ) === []
+    ) {
+      this.props.addProduct({
+        name: getElementsValue('product-name'),
+        category: getElementsValue('product-category'),
+        price: parseFloat(getElementsValue('product-price')),
+        created_date: new Date().toDateString()
+      });
+    } else {
+      Swal.fire('That product already exists!');
+    }
 
     this.setState({ price: 0, name: '' });
   };
