@@ -47,7 +47,7 @@ class AddProduct extends Component {
       return;
     }
     return (
-      <small id="emailHelp" className="form-text text-danger">
+      <small id="emailHelp" className="form-text">
         please provide a name between 1 - 50 chars
       </small>
     );
@@ -58,7 +58,7 @@ class AddProduct extends Component {
       return '';
     }
     return (
-      <small id="emailHelp" className="form-text text-danger">
+      <small id="emailHelp" className="form-text">
         Must be more than 0
       </small>
     );
